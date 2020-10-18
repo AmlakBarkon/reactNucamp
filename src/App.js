@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import { Jumbotron, Navbar, NavbarBrand } from 'reactstrap';
 import Directory from './components/DirectoryComponent';
 import  { CAMPSITES } from './shared/campsites';
 import './App.css';
@@ -11,10 +11,16 @@ class App extends Component {
       campsites: CAMPSITES
     }
   }
-    render() {
+    render() { 
+     
         return (
             <div className="App">
-                <Navbar dark color="primary">
+            
+              <Jumbotron fluid>
+                <h1>TRAVEL TO THE FIRST BLACK NATION </h1>
+                <p>Ethiopia</p>
+              </Jumbotron>
+                <Navbar dark color="primary" className="sticky-top">
                 <div className="container">
                     <NavbarBrand href="/">NuCamp</NavbarBrand>
                 </div>
