@@ -3,14 +3,14 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent'
 import Directory from './DirectoryComponent';
-import CampsiteInfo from './ContactComponent'
+import CampsiteInfo from './CampsiteInfoComponent'
 import { CAMPSITES } from '../shared/campsites';
 import { COMMENTS } from '../shared/comments';
 import { PARTNERS } from '../shared/partners';
 import { PROMOTIONS } from '../shared/promotions';
 import { Switch, Route, Redirect }from 'react-router-dom';
 import Contact from './ContactComponent';
-
+import About from './AboutComponent'
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -27,11 +27,13 @@ class Main extends Component {
                <Home 
                     campsite={this.state.campsites.filter(campsite => campsite.featured)[0]}
                     promotion={this.state.promotions.filter(promotion => promotion.featured)[0]}
-                    partner={this.state.partners.filter(partner => partner.featured)[0]}                   
+                    partner={this.state.partners.filter(partner => partner.featured)[0]} 
+                                   
                 />
             );
         }
         const CampsiteWithId =({match})=>{
+            console.log("this match is this ", match)
             return (
                 <CampsiteInfo 
                     campsite={this.state.campsites.filter(campsite => campsite.id ===
@@ -41,17 +43,27 @@ class Main extends Component {
                 />
             );
         }
+        const Partnerslist =()=>{
+            return (
+                <About 
+                    partners={this.state.partners}
+                   
+                />
+            );
+        }
+      
         return (
             <div>
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/directory' render={() =>
-                         <Directory campsites={this.state.campsites} />
+                         <Directory campsites={this.state.campsites}  />
                          } />
-                    <Route path="/directory/:campsiteId" component={CampsiteWithId}/>
-                    <Route path="/contactus" component={Contact}/>
-                    <Redirect to='/home' />
+                    <Route path= '/directory/:campsiteId' component={CampsiteWithId}/>
+                    <Route exact path='/contactus' component={Contact}/>
+                    <Route exact path='/aboutus' component = {Partnerslist}/>
+                    <Redirect to='/home'  />
                 </Switch>
                 <Footer />
               

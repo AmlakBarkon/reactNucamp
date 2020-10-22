@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
-import { Card, CardImg,  CardText, CardBody, CardTitle } from 'reactstrap';
-class CampsiteInfo extends Component {
-   renderComments(comments){
-       console.log("these are comments ",comments[0].text)  
+import React from 'react';
+import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
+function RenderComments({comments}){
+      
     if(comments){
         return(
             <div  className="col-md-5 m-1">
                 <h4>Comments</h4>
                 {
-                    comments.map(comment=>{
+                    comments.map((comment)=>{
                       return (
                       <div key={comment.id}>
-                          {comment.text}
+                         <div> {comment.text}</div>
+
                           <p>--{comment.author},{"   "}
                           {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
                      </div>
@@ -21,40 +22,50 @@ class CampsiteInfo extends Component {
             </div>
         )
     }
-    return <div></div>
    }
-    renderCampsite(campsite){  
+
+ function RenderCampsite({campsite}){
+       if(campsite){
         return(
             <div className="col-md-5 m-1">
-            <Card>
+            <Card className="border bg-danger mt-3">
                     <CardImg top src={campsite.image} alt={campsite.name} />
                     <CardBody>
-                        <CardTitle>{campsite.name}</CardTitle>
+                        {/* <CardTitle className="text-center">{campsite.name}</CardTitle> */}
                         <CardText>{campsite.description}</CardText>
                     </CardBody>
                 </Card>
             </div>
         )
     }
-    render() { 
-       
-        if(this.props.campsite){
-            // console.log("this is campsiteinfo,", this.props.campsite.comments)
-            return(
+ }
+    function CampsiteInfo(props) { 
+     
+        if(props.campsite){ 
+                  
+            return (
                 <div className="container">
-                    <div className="row">                     
-                             {this.renderCampsite(this.props)}                                          
-                             {this.renderComments(this.props.comments)}                                                              
+                    <div className="row">
+                        <div className="col">
+                            <Breadcrumb>
+                                <BreadcrumbItem><Link to="/directory">Directory</Link></BreadcrumbItem>
+                                <BreadcrumbItem active>{props.campsite.name}</BreadcrumbItem>
+                            </Breadcrumb>
+                            <h2>{props.campsite.name}</h2>
+                            <hr />
+                        </div>
                     </div>
-                </div>               
-            )
-        }
-        return ( 
-            <div></div>
-         );
+                    <div className="row">
+                        <RenderCampsite campsite={props.campsite} />
+                        <RenderComments comments={props.comments} />
+                    </div>
+                </div>
+            );
+            }
+            
 
     }
    
-}
+
  
 export default CampsiteInfo;
