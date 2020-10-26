@@ -43,14 +43,7 @@ class Main extends Component {
                 />
             );
         }
-        const Partnerslist =()=>{
-            return (
-                <About 
-                    partners={this.state.partners}
-                   
-                />
-            );
-        }
+      
       
         return (
             <div>
@@ -62,7 +55,9 @@ class Main extends Component {
                          } />
                     <Route path= '/directory/:campsiteId' component={CampsiteWithId}/>
                     <Route exact path='/contactus' component={Contact}/>
-                    <Route exact path='/aboutus' component = {Partnerslist}/>
+                    <Route exact path='/aboutus' render={() =>
+                         <About partners={this.state.partners}  />
+                         } />
                     <Redirect to='/home'  />
                 </Switch>
                 <Footer />
