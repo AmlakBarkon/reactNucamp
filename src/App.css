@@ -1,53 +1,154 @@
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: rgb(34,48,72)
 }
 
-h1, h2, h3, .card-body>.card-title {
+h1, h2, h3,  .card-body{
   font-family: "Lobster", cursive;
+  color: white;
 }
 
-.card-title {
+.card-title{
   font-weight: 500;
   font-size: 1.25rem;
+  color:darkslategray;
+}
+.card-title{
+  color:darkslategray;
 }
 
-h2 {
-  color: #3046C5;
+p{
+  color: black;
+  font-size: 15px;
 }
-
 .card-img-overlay .card-title {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+ 
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 28px;
+  background-color: rgb(34,48,72)
 }
 
 .row-content {
-  padding: 50px 0;
+  padding: 50px;
   border-bottom: 1px ridge;
   min-height: 200px;
 }
 
 .site-footer {
-  background-image: linear-gradient(#CEC8FF, white);
+  background-image: linear-gradient(to right,wheat, white,wheat);
   padding: 20px 0;
+  margin-top: 22px;
 }
 
 .jumbotron {
   margin: 0;
-  padding: 30px;
-  background-image: linear-gradient(to right, #5637DD, #3046C5, #60106B);
-  color: white;
+ /* padding: 80px;  */
+  background-image: linear-gradient(to right, white,wheat ,white); 
+  color: darkslategrey;
 }
-
-.jumbotron h2 {
-  color: #CEC8FF;
+.welcome{
+  font-size: 56px;
+  color: darkslategray;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 200;
+  text-align: center;
+  letter-spacing: .1em;
 }
-
 .navbar-dark {
-  background-color: #901CAD;
+  background-image: linear-gradient(to right, white, wheat,white);
+  color:white;
 }
+
+.navbar p{
+  color: wheat;
+}
+.nav
 li{
   list-style-type: none;
 }
-.alert{
+.carousel-h{
+height: 80vh;
 
+}
+.carousel-caption{
+  background-color: rgba(0,0,0,.5);
+  border-radius: 50px;
+  border:2px solid wheat;
+  color: white;
+}
+.director-container{
+  background: linear-gradient(to right, wheat,white,wheat);
+}
+.welcomjumbo{
+  width: 100%;
+  height: 30%;
+}
+.media-title{
+  color:white;
+ 
+}
+label{
+  color: white;
+
+}
+.onepackage{
+  font-size: 36px;
+ padding-top:30px;
+ font-family: Arial, Helvetica, sans-serif;
+ padding-bottom: 30px;
+ letter-spacing: .7rem;
+ background-image: linear-gradient(to right, wheat,white, wheat)
+}
+.one{
+ font-size: 50px;
+ font-family: Arial, Helvetica, sans-serif;
+ padding-bottom: 30px;
+ letter-spacing: .4rem;
+ background-image: linear-gradient(to right, wheat,white, wheat)
+}
+.reserveHist{
+  font-family: Arial, Helvetica, sans-serif;
+ letter-spacing: 0.1rem;
+ 
+ background-image: linear-gradient(to right, wheat,white, wheat)
+}
+.logowelcome{
+  font-size: 36px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 400;
+  letter-spacing: 2rem;
+  background-color: linear-gredient(to right, red, yellow, green)
+}
+.t{
+  font-size: 16px;
+ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+ letter-spacing: .2rem;
+ color:wheat;
+ padding: 3px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  border: 1px solid #e1e4e8;
+}
+.container-width{
+  /* max-width: 100%; */
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  color:white;
+   background-color: rgb(34,48,72);
+}
+li{
+  list-style-type: none;
+ font-style: oblique;
+ font-family: fantasy;
+ font-weight: 800;
+ letter-spacing: .1rem;
+ 
+}
+.my-class{
+  display: none;
+  background-color:white;
 }

@@ -7,13 +7,13 @@ function RenderPartner({partner}){
       
      return(
        
-         <>
+       <>
          <Media  object width="150"src={partner.image} alt={partner.name}/>
-         <Media body className="ml-5 mb-4">
+         <Media >
           <Media heading>
-              {partner.name}
+          <p className="media-title"> {partner.name}</p>
           </Media>
-          {partner.description}
+          <Media-Title ><p className="media-title">{partner.description}</p></Media-Title>
          </Media>
          </>
      )
@@ -26,11 +26,11 @@ function About(props) {
 
     const partners = props.partners.map(partner => {
         return (
-          
+            <div className="col-12 col-sm-12 col-12">
                 <Media tag="li"key={partner.id} >
                     <RenderPartner partner={partner}/>
                 </Media>
-               
+              </div> 
           
          );
     });
@@ -49,8 +49,8 @@ function About(props) {
             </div>
             <div className="row row-content">
                 <div className="col-sm-6">
-                    <h3>Our Mission</h3>
-                    <p>We present a curated database of the best campsites in the vast woods and backcountry of the World Wide Web Wilderness. We increase access to adventure for the public while promoting safe and respectful use of resources. The expert wilderness trekkers on our staff personally verify each campsite to make sure that they are up to our standards. We also present a platform for campers to share reviews on campsites they have visited with each other.</p>
+                    <h3 className="text-white">Our Mission</h3>
+                    <p className="text-white">We present a curated database of the best campsites in the vast woods and backcountry of the World Wide Web Wilderness. We increase access to adventure for the public while promoting safe and respectful use of resources. The expert wilderness trekkers on our staff personally verify each campsite to make sure that they are up to our standards. We also present a platform for campers to share reviews on campsites they have visited with each other.</p>
                 </div>
                 <div className="col-sm-6">
                     <Card>
@@ -85,13 +85,18 @@ function About(props) {
             </div>
             <div className="row row-content">
                 <div className="col-12">
-                    <h3>Community Partners</h3>
+                    <h5 className="text-white">Ethiopia Addis Ababa Hotels</h5>
                 </div>
-                <div className="col mt-4">
+               
                     <Media list>
-                        {partners}
+                        <div ClassName="row">
+                            {partners}
+                        </div>
+                        
                     </Media>
-                </div>
+                
+               
+                    
             </div>
         </div>
     );

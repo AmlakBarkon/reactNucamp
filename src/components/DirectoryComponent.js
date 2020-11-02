@@ -3,13 +3,13 @@ import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } 
 import {Link}from 'react-router-dom'
 
 function RenderDirectoryItem({campsite}) {
-    console.log("RernderDirect x + y ", )
+   
     return (
-        <Card>
+        <Card >
         <Link to={`/directory/${campsite.id}`}>
             <CardImg width="100%" src={campsite.image} alt={campsite.name} />
-            <CardImgOverlay>
-                <CardTitle>{campsite.name}</CardTitle>
+            <CardImgOverlay className="">
+                <CardTitle>{campsite.name} </CardTitle>
                
             </CardImgOverlay>
         </Link>
@@ -28,7 +28,7 @@ function Directory(props) {
     });
 
     return (
-        <div className="container">
+        <div className="container director-container">
             <div className="row">
                 <div className="col">
                     <Breadcrumb>

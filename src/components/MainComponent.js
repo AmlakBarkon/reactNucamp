@@ -9,6 +9,7 @@ import { Switch, Route, Redirect, withRouter }from 'react-router-dom';
 import Contact from './ContactComponent';
 import About from './AboutComponent'
 
+
 const mapStateToProps = state => {
     return {
         campsites: state.campsites,
@@ -26,7 +27,7 @@ class Main extends Component {
                     campsite={this.props.campsites.filter(campsite => campsite.featured)[0]}
                     promotion={this.props.promotions.filter(promotion => promotion.featured)[0]}
                     partner={this.props.partners.filter(partner => partner.featured)[0]} 
-                                   
+                    amlak={this.props.campsites.filter(campsite=>campsite.image)}           
                 />
             );
         }
@@ -46,6 +47,7 @@ class Main extends Component {
         return (
             <div>
                 <Header />
+                
                 <Switch>
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/directory' render={() =>
@@ -58,6 +60,7 @@ class Main extends Component {
                          } />
                     <Redirect to='/home'  />
                 </Switch>
+                
                 <Footer />
               
             </div>
