@@ -1,6 +1,7 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
-import { Link } from 'react-router-dom';
+ import { Link } from 'react-router-dom';
+
 function RenderPartner({partner}){
 
  if(partner){ 
@@ -8,13 +9,17 @@ function RenderPartner({partner}){
      return(
        
        <>
-         <Media  object width="150"src={partner.image} alt={partner.name}/>
-         <Media >
+      
+           <Media  object width="150"src={partner.image} alt={partner.name}/>
+          <Media >
           <Media heading>
           <p className="media-title"> {partner.name}</p>
           </Media>
           <Media-Title ><p className="media-title">{partner.description}</p></Media-Title>
          </Media>
+       
+      
+       
          </>
      )
 
@@ -26,11 +31,11 @@ function About(props) {
 
     const partners = props.partners.map(partner => {
         return (
-            <div className="col-12 col-sm-12 col-12">
+             <div className="col-12 col-sm-6 mt-4">
                 <Media tag="li"key={partner.id} >
                     <RenderPartner partner={partner}/>
                 </Media>
-              </div> 
+            </div>
           
          );
     });
@@ -56,18 +61,10 @@ function About(props) {
                     <Card>
                         <CardHeader className="bg-primary text-white"><h3>Facts At a Glance</h3></CardHeader>
                         <CardBody>
-                            <dl className="row">
-                                <dt className="col-6">Founded</dt>
-                                <dd className="col-6">February 3, 2016</dd>
-                                <dt className="col-6">No. of Campsites in 2019</dt>
-                                <dd className="col-6">563</dd>
-                                <dt className="col-6">No. of Reviews in 2019</dt>
-                                <dd className="col-6">4388</dd>
-                                <dt className="col-6">Employees</dt>
-                                <dd className="col-6">42</dd>
-                            </dl>
+                        
                         </CardBody>
                     </Card>
+                    
                 </div>
                 <div className="col">
                     <Card className="bg-light mt-3">
@@ -86,19 +83,14 @@ function About(props) {
             <div className="row row-content">
                 <div className="col-12">
                     <h5 className="text-white">Ethiopia Addis Ababa Hotels</h5>
-                </div>
-               
-                    <Media list>
-                        <div ClassName="row">
-                            {partners}
-                        </div>
-                        
-                    </Media>
-                
-               
-                    
+                </div>                      
             </div>
-        </div>
+              <div ClassName="row">
+                      <Media list>
+                          {partners}
+                        </Media>
+             </div>               
+       </div>
     );
 }
 

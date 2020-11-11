@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 function Footer(props){
     return(
-        <footer className="site-footer">
+        <footer className="site-footer ">
             <div className="container">
                 <div className="row">             
                     <div className="col-4 col-sm-2 offset-1">
@@ -22,8 +22,8 @@ function Footer(props){
                         <a className="btn btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube" /></a> 
                     </div>
                     <div className="col-sm-4 text-center">
-                        <a role="button" className="btn btn-link" href="tel:+12065551234"><i className="fa fa-phone" /> 202677890</a><br />
-                        <a role="button" className="btn btn-link" href="mailto:notreal@notreal.co"><i className="fa fa-envelope-o" />amlakbefekadu@yahoo.cm</a>
+                        <a role="button" className="btn btn-link" href="tel:+12065551234"><i className="fa fa-phone" /> 2026778990 </a><br />
+                        <a role="button" className="btn btn-link" href="mailto:notreal@notreal.co"><i className="fa fa-envelope-o" />amlakbefekadu@yahoo.com</a>
                     </div>
                 </div>
             </div>

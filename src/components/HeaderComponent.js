@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler,Card,CardImg,CardBody,CardTitle,CardText, Collapse, NavItem, Jumbotron,Button,Modal, ModalHeader, ModalBody,Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import ReactPlayer from 'react-player'
 import Carousel from 'react-bootstrap/Carousel'
 import {  Player,
     ControlBar,
@@ -15,12 +16,15 @@ import {  Player,
 function Vedio(props) {
     return (
                   
-            <Player fluid="false" autoPlay="true"  playsinline poster="/assets/poster.png">
+            <Player autoPlay={true}
+            poster="/assets/poster.png"
+            
+             >
           
-      <source  src="http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4" />
+            <source  src="http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4" />
            <source src="http://mirrorblender.top-ix.org/movies/sintel-1024-surround.mp4" />
         <BigPlayButton position="center" />
-      <ControlBar>
+        <ControlBar>
         <ReplayControl seconds={10} order={1.1} />
         <ForwardControl seconds={30} order={1.2} />
         <CurrentTimeDisplay order={4.1} />
@@ -48,7 +52,8 @@ console.log("carousel props", props.image)
                             <div className="col-12 col-m-12">
                                 
                                  <Card className="one">
-                                    <CardImg src="./assets/images/Ethiopianplane.jpg" alt="plane"></CardImg>
+                                    {/* <CardImg src="./assets/images/Ethiopianplane.jpg" alt="plane"></CardImg> */}
+                                    <ReactPlayer width="50" height="120px"  url='https://www.youtube.com/embed/3PgmU_SqQO4' />
                                         <CardBody>
                                             <CardTitle className="reserveHist" >RESERVATION</CardTitle>
                                             <CardText>
@@ -57,6 +62,7 @@ console.log("carousel props", props.image)
                                                     <li><a href="https://www.hyatt.com/en-US/hotel/ethiopia/hyatt-regency-addis-ababa/addra?&src=pfxeame_sem_pfx_search_google_mena_rooms_nb_ethiopia_fd_eng_pfx_search_google_mena_rooms_nb_city_addra_addis_ababa_ethiopian%20hotel%20addis%20ababa&mckv=s-dc_pcrid_462606703609_mtid_5297kx13790&gclid=Cj0KCQjwlvT8BRDeARIsAACRFiV3OvBZeSn0XVzjramRpmij2Ynl-_6W8rfnZjmjI6I0mwojHD47xJMaAvXiEALw_wcB&gclsrc=aw.ds">Hotels</a></li>
                                                     
                                                 </ul>
+                                               
                                             </CardText>
                                     </CardBody>
                                  </Card>
@@ -233,11 +239,11 @@ class Header extends Component {
                
                 <Navbar className="bg-dark" sticky="top" expand="md">
                     <div className="container">
-                        <NavbarBrand className="mr-auto" href="/s">
+                        <NavbarBrand className="mr-auto" href="/">
                             <h6>T&Tour</h6>
                         </NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
-                        <Collapse isOpen={this.state.isNavOpen} navbar>
+                        <Collapse isOpen={this.state.isNavOpen} className="bg-primary" navbar>
                             <Nav navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/home">
@@ -268,10 +274,10 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                <Modal  isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
-                    <ModalBody>
-                    <Form onSubmit={this.handleLogin}>
+                    <ModalBody className="modal-picture">
+                    <Form   onSubmit={this.handleLogin}>
                             <FormGroup>
                                 <Label htmlFor="username">Username</Label>
                                 <Input type="text" id="username" name="username"

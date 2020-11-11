@@ -21,14 +21,14 @@ function Directory(props) {
 
     const directory = props.campsites.map(campsite => {
         return (
-            <div key={campsite.id} className="col-md-5 m-1">
+            <div key={campsite.id} className="col-md-5 m-auto ">
                 <RenderDirectoryItem campsite={campsite} />
             </div>
         );
     });
 
     return (
-        <div className="container director-container">
+        <div className="container director-container addis">
             <div className="row">
                 <div className="col">
                     <Breadcrumb>

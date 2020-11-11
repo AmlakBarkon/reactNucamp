@@ -36,7 +36,7 @@ p{
 }
 
 .site-footer {
-  background-image: linear-gradient(to right,wheat, white,wheat);
+  background-color: rgb(34,48,72);
   padding: 20px 0;
   margin-top: 22px;
 }
@@ -88,10 +88,11 @@ height: 80vh;
   color:white;
  
 }
-label{
+address, label, h5{
   color: white;
 
 }
+
 .onepackage{
   font-size: 36px;
  padding-top:30px;
@@ -151,4 +152,39 @@ li{
 .my-class{
   display: none;
   background-color:white;
+}
+/* .intro {
+  background: url("/assets/images/zebra.jpeg")no-repeat center center fixed;
+  
+  background-size: cover;
+} */
+.addis{
+  background: url("/assets/images/nilefall.jpg")no-repeat center center fixed;
+  
+  background-size: cover
+}
+
+
+.page-enter {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: 1300ms ease-out;
+}
+.page-enter {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: 1300ms ease-in;
+}
+.modal-picture{
+  background: url("/assets/images/addis.jpg")no-repeat center center fixed;
 }

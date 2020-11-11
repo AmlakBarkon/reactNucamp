@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, Jumbotron } from 'reactstrap';
 import Carousel from 'react-bootstrap/Carousel'
 
+
 function CarouselHome(props){
     console.log("carousel props", props.image)
         return(
@@ -79,13 +80,15 @@ function RenderCardone(props){
 
 function RenderCard({item}) {
     return (
-        <Card>
+     
+         <Card>
             <CardImg src={item.image} alt={item.name} />
             <CardBody className="one">
                 <CardTitle >{item.name}</CardTitle>
                 <CardText  >{item.description}</CardText>
             </CardBody>
         </Card>
+      
     );
 }
 function Home(props) {
@@ -96,18 +99,21 @@ function Home(props) {
         <div className="container">
                 
             <div className="row  ">
+                
                  <div className="col-md-12 m-1">
                     <RenderCardone  />
                 </div>
+
                 <div className="col-md-4 my-5">
                     <RenderCard item={props.campsite} />
                 </div>
                 <div className="col-md-4 my-5">
                     <RenderCard item={props.promotion} />
                 </div>
-                <div className="col-md-3 mt-5">
+                <div className="col-md-4 my-5">
                     <RenderCard item={props.partner} />
                 </div>
+                
                
                
               
