@@ -242,9 +242,9 @@ class Header extends Component {
                         <NavbarBrand className="mr-auto" href="/">
                             <h6>T&Tour</h6>
                         </NavbarBrand>
-                        <NavbarToggler onClick={this.toggleNav} />
-                        <Collapse isOpen={this.state.isNavOpen} className="bg-primary" navbar>
-                            <Nav navbar>
+                        <NavbarToggler onClick={this.toggleNav}className="border  bg-primary text-black" />
+                        <Collapse isOpen={this.state.isNavOpen}  navbar>
+                            <Nav navbar >
                                 <NavItem>
                                     <NavLink className="nav-link" to="/home">
                                         <i className="navbar" /><p>Home</p> 

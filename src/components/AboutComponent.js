@@ -1,6 +1,7 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
  import { Link } from 'react-router-dom';
+import MyApp from './Players';
 
 function RenderPartner({partner}){
 
@@ -55,13 +56,14 @@ function About(props) {
             <div className="row row-content">
                 <div className="col-sm-6">
                     <h3 className="text-white">Our Mission</h3>
-                    <p className="text-white">We present a curated database of the best campsites in the vast woods and backcountry of the World Wide Web Wilderness. We increase access to adventure for the public while promoting safe and respectful use of resources. The expert wilderness trekkers on our staff personally verify each campsite to make sure that they are up to our standards. We also present a platform for campers to share reviews on campsites they have visited with each other.</p>
+                    <p className="text-white">Completely personalized, stellar guides, fabulous recommendations, unforgettable trips,” is how one T+L reader summed up the Ker & Downey experience. The company has been serving travelers for more than 50 years, and though it’s especially known for safaris, the advisors are adept at planning custom trips with a “wow” factor anywhere in the world. Little wonder that many of the readers who rated it so highly are repeat customers, especially for landmark celebration</p>
                 </div>
+               
                 <div className="col-sm-6">
                     <Card>
-                        <CardHeader className="bg-primary text-white"><h3>Facts At a Glance</h3></CardHeader>
+                        <CardHeader className="bg-primary text-white"><h3>OUR ENVENTS</h3></CardHeader>
                         <CardBody>
-                        
+                        <MyApp/>
                         </CardBody>
                     </Card>
                     
@@ -85,7 +87,7 @@ function About(props) {
                     <h5 className="text-white">Ethiopia Addis Ababa Hotels</h5>
                 </div>                      
             </div>
-              <div ClassName="row">
+              <div className="row">
                       <Media list>
                           {partners}
                         </Media>
